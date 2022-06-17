@@ -1,0 +1,95 @@
+@r: 50rem;
+//文字颜色变量公用
+@col-o: #333; //证券及标题颜色 
+@col-t: #999; //日期颜色 
+@col-b: #666; //作者颜色
+@col-w: #fff; //公告样式
+@col-blue: #4a90e2; //查看更多
+.tabslider {
+    li {
+        padding: 30/@r 30/@r 30/@r 0;
+        margin-left: 30/@r;
+        position: relative;
+        a {
+            display: block;
+            width: 100%;
+            color: @col-o;
+            text-decoration: none;
+            font-size: 36/@r;
+            line-height: 54/@r;
+            text-align: justify;
+            overflow: hidden;
+            display: -webkit-box;
+            text-overflow: ellipsis;
+            word-break: break-all;
+            -webkit-box-orient: vertical;
+            -webkit-line-clamp: 2;
+        }
+        a:visited {
+            color: @col-o;
+        }
+        a:hover {
+            color: @col-t;
+        }
+        a:active {
+            color: @col-b;
+        }
+        span {
+            display: block;
+            color: @col-t;
+            text-align: left;
+            font-size: 24/@r;
+            margin-top: 16/@r;
+        }
+    }
+}
+//研报样式
+.yb-ul {
+    li {
+        margin-left: 0 !important;
+        padding-left: 30/@r;
+    }
+}
+.yb-ul-title {
+    width: 100%;
+    line-height: 40/@r;
+    margin-bottom: 20/@r;
+    .zq-name {
+        font-size: 28/@r;
+        margin-right: 20/@r;
+        img {
+            width: 40/@r;
+            height: 40/@r;
+            line-height: 40/@r;
+            margin-right: 16/@r;
+            margin-top: -3px;
+        }
+    }
+    .hy-b {
+        margin-top: 0 !important;
+        font-size: 24/@r;
+        color: @col-w;
+        background: #4990e2;
+        border-radius: 4px;
+        width: 80/@r;
+        text-align: center;
+    }
+    .pro-name {
+        font-size: 24/@r;
+        margin-top: 0 !important;
+        img {
+            width: 24/@r;
+            height: 24/@r;
+            line-height: 24/@r;
+            margin-left: 8/@r;
+            margin-top: -3px;
+        }
+    }
+}
+//查看更多
+.view-more {
+    background: #f7f7f7;
+    font-size: 24/@r;
+    padding: 25/@r 0;
+    color:@col-blue;
+}

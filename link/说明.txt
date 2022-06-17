@@ -1,0 +1,9 @@
+Welcome to ASI Redsun Network Science and Technology Center (version v1.3.2)
+  1ST.Some contents have been modified in this update
+  1. Add "file download center" and "announcement" module.
+  2. Integrate all the games into one, more concise!
+  3. Optimize the icon.
+  4. Confidentiality agreement optimization, users must log in to enter the site.
+  5. Fix some known bugs.
+  
+  2ND.After the video resource is downloaded successfully, enter the album, find the "downloaded" album, and click open to play it; if there is no file, please find the "download" folder in "WPS", and then find the video file, and add the suffix extension.MP4 or.Ts to repair it successfully. File to prevent resource failure, please move the file to the system album folder.
