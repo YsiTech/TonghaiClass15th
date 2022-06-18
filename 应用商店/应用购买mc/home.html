@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="maximum-scale=1.0,minimum-scale=1.0,user-scalable=0,width=device-width,initial-scale=1.0" />
+		<meta name="format-detection" content="telephone=no, email=no, date=no, address=no">
+		<meta name="apple-mobile-web-app-capable" content="yes">
+		<meta name="apple-mobile-web-app-status-bar-style" content="black">
+		<link rel="stylesheet" href="css/common.css" />
+		<script type="text/javascript" src="js/common.js"></script>
+		<script type="text/javascript" src="js/template.js" ></script>
+		<title>亚斯充值</title>
+	</head>
+	<body>
+		<section class="g-flexview">
+			<header class="m-navbar demo-small-pitch " id="header">
+				<a href="JavaScript:window.history.back();" class="navbar-item"><i class="iconjiantou iconimg"></i></a>
+				<div class="navbar-center"><span class="navbar-title" id="header-title">亚斯网络充值中心</span></div>
+				<a href="JavaScript:;" class="navbar-item"></a>
+			</header>
+			<section class="g-scrollview home-module" id="scrollview-content">
+				<div class="module-cell clearfix ptb01rem">
+					<div class="cell-item homename">
+						<div class="cell-left"><img src="images/logo_07.png" class="zj_logoimg"></div>
+						<div class="cell-right text-content">亚斯红日网络科技</div>
+					</div>
+				</div>
+				<div class="module-cell clearfix  pad02rem">
+					<div class="box accountinfo">
+						<div class="box-flex">
+							<h5 class="title_name">账户信息</h5>
+							<h3 class="colorhui3">administrator</h3>
+						</div>
+						<div class="box-flex">
+							<h5 class="title_name">亚斯卢布余额</h5>
+							<h3 class="color5b">0</h3>
+						</div>
+					</div>
+					<!--充值-->
+					<div class="rechargeinfo">
+						<h5 class="title_name mb025rem">充值数量</h5>
+						<div class="recharge">
+							<div class="cell-item recharge_select">
+								<span class="cell-left font-size035rem">10000₽ 亚斯卢布</span>
+								<div class="cell-right font-size030rem">
+									<input type="radio" value="man" name="radio" data-price="10.00" data-discount="9.5" onclick="checkedradio(this)"> ¥10.00<span class="selected checkeds"></span>
+								</div>
+	
+							</div>
+						</div>
+					</div>
+				</div>
+				<footer class="m-tabbar tabbar-fixed">
+					<div class="box">
+						<div class="box-flex7 recharge_price ">
+							<span class="color5b  ml02rem font-size045rem"><b class="font-size030rem mr01rem">¥</b><span id="rebate_price"></span></span><span class="yun_price">原价：¥<em id="yun_price"></em></span>
+						</div>
+						<div class="box-flex3">
+							<button class="btn-block bg-btn-5b" type="button" onclick="defraybtn()">立即支付</button>
+						</div>
+					</div>
+				</footer>
+			</section>
+		</section>
+	</body>
+</html>
+<script>
+	function $(i) {
+		return document.getElementById(i)
+	} //简化document.getElementById方法
+	var radios = document.getElementsByName("radio");
+	function checkedradio(e) {
+		e.checked = true;
+		for(var i = 0; i < radios.length; i++) {
+			if(e.checked == radios[i].checked) {
+				zhufuncxinxi(e);
+				e.parentNode.parentNode.className += " checked";
+			} else {
+				radios[i].checked = false;
+				radios[i].parentNode.parentNode.classList.remove("checked");
+			}
+		}
+	};
+	for(var i = 0; i < radios.length; i++) {
+		radios[0].checked = true;
+		if(radios[i].checked == true) {
+			zhufuncxinxi(radios[i]);
+			radios[i].parentNode.parentNode.className += " checked";
+		} else {
+			radios[i].checked = false;
+		}
+	}
+	var quantity = document.getElementsByName("quantity")[0];
+	quantity.onfocus = function(e) {
+		for(var i = 0; i < radios.length; i++) {
+			radios[i].checked = false;
+			radios[i].parentNode.parentNode.classList.remove("checked");
+		};
+		$("yun_price").innerHTML = '00.00';
+		$("rebate_price").innerHTML = '00.00';
+		this.onkeyup = function(e) {
+			var value = this.value;
+			var unit = this.dataset.unit;
+			var rebate = Math.round(value * unit) / 10;
+			var s = rebate.toString();
+			var rs = s.indexOf('.');
+			if(rs < 0) {
+				rs = s.length;
+				s += '.';
+			}
+			while(s.length <= rs + 2) {
+				s += '0';
+			}
+			$('zdy-price').innerHTML = s;
+			this.dataset.price = s;
+		}
+	};
+	quantity.onblur = function(e) {
+		var value = this.value;
+		var sub = value.substring(0, 7);
+		  if(sub.length < 3 || sub.length > 6 ) {
+		  	var html='';
+		  	sub.length < 3? html="最低购买数量为100":'';
+		  	sub.length > 6? html="购买数量超出最大限额":'';
+			boxmodule(html,2);
+			this.value = '';
+			$('zdy-price').innerHTML = '00.00';
+			$("yun_price").innerHTML = '00.00';
+			$("rebate_price").innerHTML = '00.00';
+		} else {
+			zhufuncxinxi(this);
+		}
+	};
+	//提交支付
+	function defraybtn() {
+            if($("rebate_price").innerHTML=="00.00"){
+            	boxmodule("请输入购买金额",5)	
+            }else{
+            	boxmodule("<div class='waitstyle'><img src='images/timg.gif'><h3>请稍等<h3></div>",2);
+            	window.location.href="defray.html";
+            }
+	};
+	//计算金额
+	function zhufuncxinxi(name) {
+		var price = name.dataset.price;
+		var discount = name.dataset.discount;
+		var rebate = Math.round(price * discount) / 10;
+		var s = rebate.toString();
+		var rs = s.indexOf('.');
+		if(rs < 0) {
+			rs = s.length;
+			s += '.';
+		}
+		while(s.length <= rs + 2) {
+			s += '0';
+		}
+		$("yun_price").innerHTML = price;
+		$("rebate_price").innerHTML = s;
+	};
+    //提示
+	function boxmodule(texts,time) {
+		var b = document.body.querySelector(".box_Bullet");
+		if(!b) {
+			var box = document.createElement("div");
+			document.body.appendChild(box).className = "box_Bullet";
+			var boxcss=document.querySelector(".box_Bullet");
+			var winWidth = window.innerWidth;	
+			document.body.appendChild(box).innerHTML = texts;
+			var wblank=winWidth-boxcss.offsetWidth;
+			box.style.cssText = "width:"+boxcss.offsetWidth+"px"+"; left:" + (wblank/ 2) + "px" + ";" + "margin-top:" + (-boxcss.offsetHeight / 2) + "px";
+			var int = setInterval(function() {
+				clock()
+			}, 1000);
+			var num = time;
+			function clock() {
+				num > 0 ? num-- : clearInterval(int);
+				if(num == 0) {
+					clearInterval(int);
+					document.body.removeChild(box);
+					return
+				}
+			}
+		}
+	}
+</script>

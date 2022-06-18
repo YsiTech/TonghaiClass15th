@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="maximum-scale=1.0,minimum-scale=1.0,user-scalable=0,width=device-width,initial-scale=1.0" />
+		<meta name="format-detection" content="telephone=no, email=no, date=no, address=no">
+		<meta name="apple-mobile-web-app-capable" content="yes">
+		<meta name="apple-mobile-web-app-status-bar-style" content="black">
+		<link rel="stylesheet" href="css/common.css" />
+		<script type="text/javascript" src="js/common.js" ></script>
+		<script type="text/javascript" src="js/jquery-1.9.1.min.js" ></script>
+	</head>
+	<body>
+		<section class="g-flexview">
+			<header class="m-navbar demo-small-pitch " id="header">
+			<a href="JavaScript:window.history.back();;" class="navbar-item"><i class="iconjiantou iconimg"></i></a>
+			<div class="navbar-center"><span class="navbar-title" id="header-title">Google Play应用获取</span></div>
+			<a href="JavaScript:;" class="navbar-item"></a>
+		    </header>  
+		<section class="g-scrollview home-module" id="scrollview-content">
+			 <div class="module-cell clearfix ptb01rem">
+			 	<div class="cell-item homename">
+						<div class="cell-left"><img src="images/logo_07.png" class="zj_logoimg" onerror="this.src='images/noimage.gif',this.onerror=null"></div>
+						<div class="cell-right text-content">亚斯红日网络科技</div>
+					</div>
+			 </div>
+			 <div class="module-cell clearfix  pad02rem">
+			 	  <div class="cell-item  productinfo ">
+						<div class="cell-left"><img src="images/mc.png" class="productimg"></div>
+						<div class="cell-right text-content">
+							<h3 class="producttitle">Minecraft</h3>
+							<h4 class="color5c">¥5</h4>
+						</div>
+					</div>
+					</div>
+			 </div>
+			 <div class="m-celltitle">账户信息</div>
+			 <div class="module-cell clearfix ">
+			 	<div class="cell-item numberinfo pad02rem">
+						<div class="cell-left">
+							<span>账号：administrator</span>
+							<span>账户信用度：良好</span>
+						</div>
+						<div class="cell-right text-content"></div>
+					</div>
+			 	
+			 </div>
+			  <footer class="m-tabbar tabbar-fixed">
+                 <div class="box">
+                 	<div class="box-flex7 recharge_price ">
+                 		<span class="color5b  ml02rem font-size045rem"><b class="font-size030rem mr01rem">¥</b>5</span>
+                 	</div>
+                 	<div class="box-flex3">
+                 		<a href="javascript:;" class="btn-block bg-btn-5b" id="defraybtn">立即支付</a>
+                 	</div>
+                 </div>
+              </footer>
+		</section>
+		</section>
+		<!--支付选择-->
+		<div class="m-actionsheet" id="defrayselect">
+			<div class="defray_title">
+				付款金额：<span class="color5b font-size045rem"><em class="font-size030rem">¥</em>5</span>
+				<a href="javascript:void(0)" class="defray_close" id="defray_close"></a>
+			</div>
+			<div class="defray_content">
+				<div class="cell-item  Payment_mode pad02rem " onclick="zhifubaolink()">
+						<div class="cell-left"><img src="images/zhifubao.png" class="Paymentimg"></div>
+						<div class="cell-right text-content">
+							<h3 class="font-size030rem mb012rem">支付宝支付</h3>
+							<h4 class="colorhui9 font-size030rem">使用支付宝客户端支付</h4>
+						</div>
+					</div>
+				<div class="cell-item  Payment_mode  pad02rem" onclick="weixinlink()">
+						<div class="cell-left"><img src="images/weixin.png" class="Paymentimg"></div>
+						<div class="cell-right text-content">
+							<h3 class="font-size030rem mb012rem">微信支付</h3>
+							<h4 class="colorhui9 font-size030rem">使用微信客户端支付</h4>
+						</div>
+							</div>
+				<div class="cell-item  Payment_mode  pad02rem" onclick="xianjinlink()">
+						<div class="cell-left"><img src="images/现金.png" class="Paymentimg"></div>
+						<div class="cell-right text-content">
+							<h3 class="font-size030rem mb012rem">现金支付</h3>
+							<h4 class="colorhui9 font-size030rem">使用现金支付</h4>
+						</div>
+					</div>
+				
+			</div>
+			
+		</div>
+	</body>
+</html>
+<script type="text/javascript" src="js/ydui.js" ></script>
+<script>
+ var $myAs = $('#defrayselect');
+        $('#defraybtn').on('click', function () {
+            $myAs.actionSheet('open');
+        });
+        $('#defray_close').on('click', function () {
+            $myAs.actionSheet('close');
+        });
+        //支付宝
+         function zhifubaolink(){    	
+     	window.location.href="images/付费.jpg";   	
+     }
+         //微信
+     function weixinlink(){    	
+     	window.location.href="images/付费.jpg";   	
+     }
+              //现金
+     function xianjinlink(){    	
+     	window.location.href="images/付费.jpg";   	
+     }
+</script>

@@ -1,0 +1,24 @@
+<!doctype html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>亚斯下载中心</title>
+        <style>
+            * {margin:0 auto;}
+            body{opacity:0;transition:2s opacity;}
+            img {height:450px;width:960px;}
+        </style>
+    </head>
+    
+    <body onload="document.body.style.opacity='1'">
+        <center><img src="img1.jpg"></center>
+        <h3 >请稍候，加载中......</h3>
+        <script>
+            function Timeout()
+            {
+                window.location.href="主页面.html"
+            }
+            setTimeout("Timeout()",4000);
+        </script>
+    </body>
+</html>

@@ -1,0 +1,187 @@
+<!doctype html>
+<html>
+    <head>
+        <title>全部应用</title>
+        <meta charest="utf-8">
+        <style>
+            *{margin:0 auto;}
+            body{background:#d9d9d9;}
+            #fixed{width:960px;height:60px;}
+            #header{width:960px;height:60px;position:fixed;top:0;left:9px;border:1px solid green;overflow:hidden;background:#cdffba;}
+            #header h1{position:absolute;left:400px;top:7px;}
+            #header input{width:100px;height:100px;outline:none;font-size:50px;background:#cdffba;border:0;position:absolute;top:-27px;left:-10px;}
+            #APP{width:960px;margin:0 auto;border:1px solid green;background:#d9d9d9;}
+            #APP nav{width:960px;margin:0 auto;background:white;height:90px;border-bottom:1px solid green;}
+            #APP nav+nav{margin-top:5px;}
+            #APP nav:last-child{border-bottom:0;}
+            #APP nav h3{border-bottom:1px solid green;width:200px;margin:0;}
+            #APP nav p{font-size:10px;float:left;}
+            #APP nav div{width:50px;height:50px;border:1px solid;margin-left:10px;margin-top:3px;float:left;border-radius:10px;overflow:hidden;}
+            #APP nav div2{width:200px;height:40px;float:left;overflow:hidden;margin-top:10px;margin-left:5px;}
+            #APP nav button{float:right;margin-right:20px;outline:none;width:80px;border:1px solid green;background:#cdffba;margin-top:10px;}
+            #APP nav button a{text-decoration:none;display:block;}
+            #APP nav img{width:50px;height:50px;}
+        </style>
+        
+        <script>
+            function df()
+            {
+                alert("暂未开放!");
+            }
+            
+            function back()
+            {
+                window.close();
+            }
+        </script>
+    </head>
+    
+    <body><!--主页面各个标签所对应的页面均以此页面为模板(因为审美较差做得不美观,若有需要调整的地方随时找我).其他标签的页面直接复制本页面的源代码,略微修改细节即可使用.故不予再做.-->
+        <div id="container">
+            <div id="fixed"></div>
+            <div id="header">
+                <form onclick="back();"><input type="submit" value="←" href="主页面.html"> </form>
+                <h1>全部应用</h1>
+            </div>
+            
+            <div id="APP"><!--页面完工时每个应用默认为暂未开放，若需要解锁应用，请直接将按钮内的onclick的值改为任意值即可.如可将onclick="df();"改为onclick="ddf();".应用提取码页面、付费页面的跳转请参照主页面的方式,注意不同的应用的提取码页面均不同,否则每个应用的提取码会相同！具体做法：将提取码页面复制几份,每个应用都独自链接一个.我知道麻烦,所以汝可以将需要提取码的应用告诉某人,我可以一键搞定（才怪）,我是说拿回家一次性搞定.-->
+               <nav>
+                <h3>GTA:SA</h3>
+                <div><img src="gta.png" alt=""></div>
+                <div2>
+                <p>版本：V1.9</p><br>
+                <p>大小：1888.75MB</p>
+                </div2>
+                <button><a href="#" onclick="yuyue();">预约</a></button>
+            </nav>
+            <nav>
+                <h3>WiFi Mouse Pro</h3>
+                <div><img src="mouse.png" alt=""></div>
+                <div2>
+                <p>版本：V4.2.9</p><br>
+                <p>大小：7.08MB</p>
+                </div2>
+                <button><a href="#" onclick="yuyue();">预约</a></button>
+            </nav>
+            <nav>
+                <h3>Lan Genius</h3>
+                <div><img src="lan.png" alt=""></div>
+                <div2>
+                <p>版本：V5.1.2</p><br>
+                <p>大小：8.41MB</p>
+                </div2>
+                <button onload="yuyue();"><a href="#" onclick="yuyue();">预约</a></button>
+            </nav>
+            <nav><!--每个nav标签提供一个应用信息-->
+                <h3>WPS Office</h3><!--应用名称-->
+                <div><img src="wps.png" alt=""></div><!--应用图标地址，alt内为图标加载失败时的提示语，注意图片尺寸最大为400×400-->
+                <div2>
+                <p>版本：V13.8.1</p><br>
+                <p>大小：78.20MB</p>
+                </div2>
+               <button><a href="WPS提取码/index.html">下载</a></button><!--href内为下载文件地址-->
+            </nav>
+            
+            <nav>
+                <h3>Firefox</h3>
+                <div><img src="ff.png" alt=""></div>
+                <div2>
+                <p>版本：V88.1.4</p><br>
+                <p>大小：63.99MB</p>
+                </div2>
+                <button><a href="Firefox提取码/index.html">下载</a></button>
+            </nav>
+            
+            <nav>
+                <h3>Minecraft</h3>
+                <div><img src="mc.png" alt=""></div>
+                <div2>
+                <p>版本：V1.17.0.58</p><br>
+                <p>大小：121.79MB</p>
+                </div2>
+                <button><a href="应用购买mc/defray.html">￥5.00</a></button>
+            </nav>
+            
+            <nav>
+                <h3>爱奇艺</h3><!--效果展示1-->
+                <div><img src="aqy.png" alt="加载失败"></div>
+                <div2>
+                <p>版本：V12.5.1</p><br>
+                <p>大小：53.90MB</p>
+                </div2>
+                <button><a href="app/爱奇艺.apk">下载</a></button>
+            </nav>
+            
+            <nav>
+                <h3>手心输入法</h3><!--效果展示2-->
+                <div><img src="sx.png" alt="加载失败"></div>
+                <div2>
+                <p>版本：V3.3.0</p><br>
+                <p>大小：24.17MB</p>
+                </div2>
+                <button><a href="app/手心输入法.apk">下载</a></button>
+                   </nav>
+                   
+                   <nav>
+                    <h3>GTA:V</h3>
+                    <div><img src="GTAV.jpg" alt=""></div>
+                    <div2>
+                    <p>版本：Beta</p><br>
+                    <p>大小：97.92GB</p>
+                    </div2>
+                    <button><a href="#" onclick="df();">¥59.00</a></button>
+                </nav>
+                
+                <nav>
+                    <h3>泰拉瑞亚</h3>
+                    <div><img src="泰拉.png" alt=""></div>
+                    <div2>
+                    <p>版本：1.4.0.5.0</p><br>
+                    <p>大小：240.22MB</p>
+                    </div2>
+                    <button><a href="#" onclick="df();">¥26.00</a></button>
+                </nav>
+                
+                <nav>
+                    <h3>iFruit</h3>
+                    <div><img src="水果.png" alt=""></div>
+                    <div2>
+                    <p>版本：3.9.9.6</p><br>
+                    <p>大小：22.4MB</p>
+                    </div2>
+                    <button><a href="#" onclick="df();">下载</a></button>
+                </nav>
+                
+                <nav>
+                    <h3>顺网云电脑</h3>
+                    <div><img src="顺网云.png" alt=""></div>
+                    <div2>
+                    <p>版本：1.8.3</p><br>
+                    <p>大小：78.97MB</p>
+                    </div2>
+                    <button><a href="#" onclick="df();">下载</a></button>
+                </nav>
+                
+                <nav>
+                    <h3>钉钉</h3>
+                    <div><img src="钉钉.png" alt=""></div>
+                    <div2>
+                    <p>版本：3.8.6</p><br>
+                    <p>大小：144.29MB</p>
+                    </div2>
+                    <button><a href="#" onclick="df();">下载</a></button>
+                </nav>
+                
+                <nav>
+                    <h3>随身乐队</h3>
+                    <div><img src="乐队.png" alt=""></div>
+                    <div2>
+                    <p>版本：29.9.0</p><br>
+                    <p>大小：89.28MN</p>
+                    </div2>
+                    <button><a href="#" onclick="df();">下载</a></button>
+                </nav>
+            </div>
+        </div>
+    </body>
+</html>
