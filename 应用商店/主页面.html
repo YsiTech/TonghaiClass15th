@@ -1,0 +1,90 @@
+<!doctype html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>亚斯下载中心</title>
+        <style>/*这是css样式表*/
+            *{margin:0 auto}
+            body{background:#d9d9d9;opacity:0;transition:2s opacity;}
+            #photoplayer{width:960px;height:220px;overflow:hidden;border:2px solid green;border-radius:20px;overflow:hidden;margin-left:10px;}
+            #container{width:3840px;height:220px;animation:switch 20s ease-out infinite;}
+            #container img{width:960px;height:220px;float:left;}
+            @keyframes switch
+            {
+               0%,20%{margin-left:0;}
+               25%,45%{margin-left:-960px;}
+               50%,70%{margin-left:-1920px;}
+               75%,95%{margin-left:-2880px;}
+               100%{margin-left:0;}
+            }
+            #info{width:20px;height:220px;position:absolute;right:250px;top:30px;font-size:20px;}
+            #logo{width:220px;height:220px;border:2px solid green;border-radius:20px;overflow:hidden;margin:auto;position:absolute;right:10px;top:0;display:none;}
+            #logo img{width:220px;height:220px;}
+            #Tag{width:960px;margin:10px auto;text-align:center;overflow:hidden;}
+            #Tag ul{display:block;overflow:hidden;}
+            #Tag ul li{width:100px;float:left;list-style-type:none;border:2px solid green;border-radius:10px;position:relative;margin-left:-20px;overflow:hidden;}
+            #Tag ul li+li{margin-left:30px;}
+            #Tag ul li a{display:block;text-align:center;text-decoration:none;background:#cdffba;}
+            #reload{width:60px;position:absolute;right:-180px;}
+            #Tag #c{position:absolute;right:60px;top:200px;display:none;}
+            #APP{width:960px;border:2px solid green;border-radius:20px;overflow:hidden;solid green;margin-bottom:5px;}
+            #APP section{background:white;width:960px;margin:auto;border-bottom:0px solid green;}
+            #APP nav{width:960px;margin:0 auto;background:white;height:90px;border-top:1px solid green;border-bottom:1px solid green;}
+            #APP nav+nav{margin-top:5px;}
+            #APP nav:last-child{border-bottom:0;}
+            #APP nav h3{border-bottom:1px solid green;width:200px;margin:0;}
+            #APP nav p{font-size:10px;float:left;}
+            #APP nav div{width:50px;height:50px;border:1px solid;margin-left:10px;margin-top:3px;float:left;border-radius:10px;overflow:hidden;}
+            #APP nav div2{width:200px;height:40px;float:left;overflow:hidden;margin-top:10px;margin-left:5px;}
+            #APP nav button{float:right;margin-right:20px;outline:none;width:80px;border:1px solid green;background:#cdffba;margin-top:10px;}
+            #APP nav button a{text-decoration:none;display:block;}
+            #APP nav img{width:50px;height:50px;}
+        </style>
+        
+        <script>//这是JavaScript加载区
+            function yuyue()
+            {
+                alert("预约成功");
+            }
+        </script>
+    </head>
+    <!--本网页特点：简约、快速、体积小、源码内容明了，注释得当-->
+    <body onload="document.body.style.opacity='1'" scroll="none"><!--注意：本页面仅供亚斯红日网络科技中心使用，为了便于维护，本页面不使用外接样式表和外接JavaScript.-->
+        <div id="photoplayer"><!--图片尺寸过大,图像映射不能用,所以采用整张图片链接(注意链接的是直接的下载网站)-->
+            <div id="container">
+                <a href="https://www.firefox.com.cn/?ivk_sa=1024320u" target="_blank"><img id="img1" src="Firefox.jpg"></a>
+                <a href="https://www.wps.cn/" target="_blank"><img id="img2" src="wps.jpg"></a>
+                <a href="https://m.muzhiwan.com/com.mojang.minecraftpe.html" target="_blank"><img id="img3" src="mc.jpg"></a>
+                <a href="https://www.xbext.com/" target="_blank"><img id="img4" src="ais.jpg"></a>
+            </div>
+        </div>
+        
+        <p id="info"></p>
+        
+        <div id="logo">
+            <img src="ais.jpg">
+        </div>
+        
+        <div id="Tag"><!--导航标签-->
+            <ul>
+
+                <p id="c">Copyright RedSunTech</p>
+                <li id="reload"><a href="">刷新</a></li>
+            </ul>
+        </div>
+        
+        <div id="APP">
+            <center><section><h1>推荐应用</h1></section></center><!--已添加提取码页面跳转,设置的默认密码__WPS：1234；Firefox：4321；爱奇艺：1324；手心：4231.-->
+          
+            <nav>
+                <h3>Skype</h3><!--效果展示2-->
+                <div><img src="skpe.webp" alt="加载失败"></div>
+                <div2>
+                <p>版本：6.20.0.3</p><br>
+                <p>大小：44.17MB</p>
+                </div2>
+                <button><a href="https://skype.gmw.cn/resource/uploadimg/android/chinaGmf-8.15.0.388.apk">下载</a></button>
+            </nav>
+        </div>
+    </body>
+</html>
