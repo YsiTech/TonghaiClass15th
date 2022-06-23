@@ -36,11 +36,11 @@ new Vue({
           :class="modeType == 1 ? 'lucky-draw-number-custom' : 'lucky-draw-number'"
           :disabled="isLuckyDraw"
           v-model="numberPeople"
-          placeholder="本轮抽奖人数"
+          placeholder="本轮抽取人数"
         />
         <!-- 抽奖按钮 -->
         <a-button @click="luckyDraw">
-          {{ isLuckyDraw ?  luckyDrawTime ? '停止抽奖' : '结束本轮' : '开始抽奖' }}
+          {{ isLuckyDraw ?  luckyDrawTime ? '停止抽取' : '结束本轮' : '开始抽取' }}
         </a-button>
       </div>
       <!-- 右边工具栏 -->
