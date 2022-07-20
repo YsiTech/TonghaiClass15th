@@ -1,0 +1,11 @@
+.head-active{
+    position: fixed;
+    width: 100vw;
+    height: 8vh;
+    left: 0;
+    right: 0;
+    background-color: rgba(255, 254, 254, 0.95);
+    box-shadow: 0 1vh 1vh rgba(128, 128, 128, 0.5);
+    transition: 0.4s;
+    z-index: 10;
+}
