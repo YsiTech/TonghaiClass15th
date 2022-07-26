@@ -41,12 +41,12 @@ var Lock = function () {
       if (this.code === this.pin) {
         this.verified = true;
         this.dom.lock.classList.add('verified');
-        this.dom.status.textContent = 'SUCCEED';
+        this.dom.status.textContent = '已授权';
 window.location.href="https://cdn1-school.ai-classes.com/fpupload/20220618/53008/3c890af5c48540c0b67a62f8cedae46f/001.mp4";
         this.sounds.success.play();
       } else {
         this.dom.lock.classList.remove('verified');
-        this.dom.status.textContent = 'UNAUTHORIZED';
+        this.dom.status.textContent = '未授权';
         if (this.verified) {
           this.sounds.fail.play();
         }
