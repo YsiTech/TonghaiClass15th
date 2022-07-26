@@ -90,10 +90,10 @@ $(document).ready(function () {
   $('.input-user-name').on('change', function () {
     var userName = this.value
     var input = this
-    $.get('http://localhost:3000/users?user-name=' + userName, function (data, status) {
-      console.log(data, status)
+   $.get('https://ysitech.github.io/TonghaiClass15th/user.json', function (data, status) {
       if (data.length === 0) {
-        $.get('http://localhost:3000/users?phone-number=' + userName, function (data, status) {
+        $.get('https://ysitech.github.io/TonghaiClass15th/user.json', function (data, status) {
+
           // console.log(data, status)
           // var user = findUsername(data, userName)
           // var user2 = findphoneNumber(data, userName)
@@ -136,14 +136,14 @@ $(document).ready(function () {
       console.log(userNameIsV, passwordIsV)
       var userName = $('.input-user-name').val()
       var password = $('.input-password').val()
-      $.get('http://localhost:3000/users', function (data, status) {
+      $.get('https://ysitech.github.io/TonghaiClass15th/user.json', function (data, status) {
         var user = findUser(data, userName, password)
         if (user) {
           $('.message-container .icon-true').css('background-image', 'url("img/正确.png")')
           $('.message-container .message-text').text('登录成功,1s后进入主页')
           $('.message-container').show()
           setTimeout(function () {
-            window.location.href = 'home.html'
+            window.location.href = 'main.html'
           }, 1000)
         } else {
           $('.message-container .icon-true').css('background-image', 'url("img/错误.png")')
@@ -170,7 +170,7 @@ $(document).ready(function () {
     var phoneNumber = this.value
     var input = this
     if (/^1[34578]\d{9}$/.test(phoneNumber)) {
-      $.get('http://localhost:3000/users?phone-number=' + phoneNumber, function (data, status) {
+      $.get('https://ysitech.github.io/TonghaiClass15th/user.json', function (data, status) {
         // console.log(data)
         // var user = findUsername(data, userName)
         if (data.length === 0) {
@@ -195,7 +195,7 @@ $(document).ready(function () {
       change(input, false)
       return
     }
-    $.get('http://localhost:3000/users?user-name=' + userName, function (data, status) {
+    $.get('https://ysitech.github.io/TonghaiClass15th/user.json', function (data, status) {
       // console.log(data)
       // var user = findUsername(data, userName)
       if (data.length === 0) {
@@ -256,7 +256,7 @@ $(document).ready(function () {
       var userName = $('.register-user-name').val()
       var password = $('.register-password').val()
       console.log('开始注册1')
-      $.post('http://localhost:3000/users', {
+      $.post('https://ysitech.github.io/TonghaiClass15th/user.json', {
         'user-name': userName,
         'phone-number': phoneNumber,
         password: password
