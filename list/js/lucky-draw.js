@@ -9,7 +9,7 @@ new Vue({
             <div class="lucky-draw-user-name">{{ item.name }}</div>
             <div class="lucky-draw-user-department">{{ item.department }}</div>
           </div>
-          <div v-if="!users.length && !surplusUsers.length" class="ucky-draw-empty">老板大气，已经人人中奖了！</div>
+          <div v-if="!users.length && !surplusUsers.length" class="ucky-draw-empty">6，人都抽完了</div>
         </div>
       </div>
       <!-- 设置奖项，人数，并开始抽奖 -->
@@ -279,13 +279,13 @@ new Vue({
           name: '轮数',
           field: 'round',
           style: {
-            color: '#0000FF',
+            color: '#CE1212',
             alignmentHor: 'Center',
             alignmentVer: 'Center'
           }
         },
         {
-          name: '奖项',
+          name: '内容',
           field: 'award',
           style: {
             color: '#0000FF',
@@ -294,13 +294,13 @@ new Vue({
           }
         },
         {
-          name: '中奖用户',
+          name: '被杨帅哥眷顾的幸运儿们',
           field: 'names',
           style: {
             colWidth: 888,
-            color: '#0000FF',
-            borderColor: '#D5DBEA',
-            backgroundColor: '#00FFFF'
+            color: '#FFFF00',
+            borderColor: '#FFFF00',
+            backgroundColor: '#CE1212'
           }
         }
       ]
@@ -308,7 +308,7 @@ new Vue({
       const sheets = [
         {
           // 单个 sheet 名字
-          name: '中奖名单',
+          name: '看起来还不错的名单',
           // 单个 sheet 数据源
           data: this.winningUsers,
           // 单个 sheet 列名称与读取key
