@@ -1,0 +1,103 @@
+/*==================     Subscribe Form     ======================*/
+
+$form-height: 46px;
+$form-border: 1px solid #fff;
+$form-color: #c1c1c1;
+$form-bg: #fff;
+
+//--------------------------------------------------------------
+//                      Subscribe Form
+//--------------------------------------------------------------
+.subscribe-form{
+  position: relative;
+  display: inline-block;
+  width: 562px;
+
+  label {
+    display: inline-block;
+    max-width: 410px;
+    width: 100%;
+    position: relative;
+    padding: (($form-height - 22)/2) 17px (($form-height - 22)/2);
+    background: $form-bg;
+    border: $form-border;
+     @include box-sizing(border-box);
+  }
+
+  input {
+    @include reset-input;
+    color: $form-color;
+    display: block;
+    width: 100%;
+    padding: 0;
+    margin: 0;
+    font-size: 19px;
+    font-weight: 400;
+    font-family: $ubuntu;
+    line-height: 22px;
+    text-transform: uppercase;
+    height: 22px;
+  }
+  a[data-type="submit"]{
+    padding: 12px 20px;
+    font-size: 19px;
+    line-height: 24px;
+  }
+
+  label + a[data-type="submit"]{
+    margin-top: 0;
+    margin-left: 6px;
+  }
+
+  @media (max-width: 979px) {
+    label + a[data-type="submit"] {
+      margin-top: 10px;
+      margin-left: 0;
+    }
+  }
+}
+
+//--------------------------------------------------------------
+//                      Error Message
+//--------------------------------------------------------------
+
+.error{
+  position: absolute;
+  top: 2px;
+  right: 5px;
+  font-size: 10px;
+  line-height: 12px;
+  color: #f00;
+  overflow: hidden;
+  height: 0px;
+  @include transition(.3s all ease);
+}
+
+label.invalid .error {
+  height: 21px;
+}
+
+//--------------------------------------------------------------
+//                      Success Message
+//--------------------------------------------------------------
+
+.success{
+  display: none;
+  position: absolute;
+  top: 2px;
+  right: 5px;
+  font-size: 10px;
+  line-height: 12px;
+  text-align: center;
+  color: #38A46B;
+}
+
+//--------------------------------------------------------------
+//                    Responsive Layout
+//--------------------------------------------------------------
+@media (max-width: 479px) {
+  .subscribe-form label{
+    width: 100%;
+  }
+}
+

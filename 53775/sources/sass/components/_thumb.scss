@@ -1,0 +1,54 @@
+/*==================   Tumbnail    ======================*/
+
+.thumb {
+  display: block;
+  position: relative;
+  overflow: hidden;
+
+  img {
+    @include transition(.5s all ease);
+  }
+
+  &_overlay {
+    position: absolute;
+    left: 0;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    opacity: 0;
+    @include transition(.3s all ease);
+
+    &:before{
+      content: '';
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      width: 70px;
+      height: 70px;
+      line-height: 70px; 
+      margin-top: -35px;
+      margin-left: -35px;
+      background: $primary url("../images/icon.png") no-repeat center center;
+      @include border-radius(50%);
+      @include transition(.3s all ease);
+
+      .lt-ie9 & {
+        display: none;
+      }
+    }
+  }
+
+  &:hover {
+    .thumb_overlay {
+      opacity: 1;
+
+      .lt-ie9 &:before {
+        display: block;
+      }
+    }
+
+    img {
+      @include transform(scale(1.2));
+    }
+  }
+}
