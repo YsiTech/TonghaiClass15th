@@ -1,0 +1,206 @@
+<!doctype html>
+<html>
+    <head>
+        <title>蓬溪中心高2020级八班</title>
+        <meta charest="UTF-8">
+        <meta name="applicable-device" content="pc,mobile">
+        <link rel="stylesheet" href="css/重做.css">
+        <link rel="stylesheet" href="css/重做-动态布局.css">
+    </head>
+    
+    <body>
+        <!--媒体验证-->
+        <div class="warn">
+            为了良好的体验，请使用平板或电脑访问此页面！
+        </div>
+        <div class="warn_p">
+            为了良好的体验，请使您的设备保持横屏状态！
+        </div>
+        
+        <!--主体内容-->
+        <div class="main_wrapper" id="main_wrapper">
+            <!--背景-->
+            <img class="background" id="background" src="images/class.jpg">
+        
+            <!--导航栏透明背景-->
+            <div class="opacity" id="opacity"></div>
+            <!--班徽-->
+            <div class="logoBox" id="logoBox">
+                <img class="logo" id="logo" src="images/mainlogo.png">
+            </div>
+            <!--导航栏-->
+            <nav class="head" id="head">
+
+
+                <!--导航链接-->
+                <nav class="nav">
+                    <a href="javascript:;" class="nav_a">美丽校园</a>
+                    <a href="javascript:;" class="nav_a">良师益友</a> 
+                    <a href="javascript:;" class="nav_a">班级论坛</a>
+                </nav>
+            </nav>
+        
+            <!--图图助手-->
+            <div class="tu" id="tu">
+                <img class="tuHead" id="tuHead" src="images/tutu.jpg">
+            </div>
+        
+            <!--图图助手菜单-->
+            <div class="menu_d" id="menu">
+                <a class="m" href="javascript:;" id="m1">关于网站</a>
+                <a class="m" href="javascript:;" id="m2">公告</a>
+                <a class="m" href="javascript:;" id="m3">帮助&说明</a>
+                <a class="m" href="javascript:;" id="m4">赞助开发者</a>
+            </div>
+        
+            <!--公告-->
+            <div class="notice_d" id="notice">
+                <div class="headline">公告</div>
+                <span class="notice_close" id="notice_close">×</span>
+                <div class="content" id="content">
+                    <p>1.高2020级八班网站重做中...</p>
+                    <p>2.重做：修改了页面布局的一些细节，使网页显得更加轻松、简约；重写了动态效果，使其更加丝滑；修复了布局定位的漏洞，在电脑等大屏上不会再出现怪异现象；更改了公告的样式。</p>
+                    <p>3.更新：添加了内存释放代码，减少了浏览器运行负担</p>
+                </div>
+            </div>
+            <!--背景遮挡-->
+            <div class="hidden_d" id="hidden"></div>
+            
+            <!--音乐播放器-->
+            <div class="musicBox" id="musicBox">
+                <div class="musicName" id="musicName"></div>
+                <div class="musicControl">
+                    <div class="last" id="last">←</div>
+                    <div class="p_p" id="p_p"></div>
+                    <div class="next" id="next">→</div>
+                </div>
+            </div>
+        </div>
+        
+        <!--下拉页面-->
+        <div class="more_d" id="more">
+            <div class="more_btn" id="more_btn">MORE</div>
+            <div class="more_out" id="more_out">BACK</div>
+        </div>
+        
+        <script>
+            //初始化页面元素/获取页面元素信息
+            var
+            main_wrapper=document.getElementById("main_wrapper"),
+            background=document.getElementById("background"),
+            opacity=document.getElementById("opacity"),
+            head=document.getElementById("head"),
+            logo=document.getElementById("logoBox"),
+            tu=document.getElementById("tu"),
+            menu=document.getElementById("menu"),
+            m=document.getElementsByClassName("m"),
+            notice=document.getElementById("notice"),
+            notice_close=document.getElementById("notice_close"),
+            content=document.getElementById("content"),
+            hidden=document.getElementById("hidden"),
+            m1=document.getElementById("m1"),
+            m2=document.getElementById("m2"),
+            m3=document.getElementById("m3"),
+            m4=document.getElementById("m4"),
+            more=document.getElementById("more"),
+            more_btn=document.getElementById("more_btn"),
+            more_out=document.getElementById("more_out");
+            
+            
+            
+            //身份认证：
+            //var enterPassword=prompt("请输入暗号：");
+            //if(enterPassword=="图图万岁"){
+            //启动时动态加载页面
+            var timer=0;
+            function startLoading(){
+                timer++;
+                if(timer==5){
+                    opacity.style.top="0";
+                    head.style.top="0";
+                    logoBox.style.top="0";
+                    tu.style.right="0";
+                    notice.className="notice";
+                    hidden.className="hidden";
+                }
+                if(timer==10){
+                    content.style.opacity="1";
+                }
+                if(timer==11){
+                    var time=setInterval(function(){startLoading();},100);
+                    clearInterval(time);
+                }
+            }
+            setInterval(function(){
+                startLoading();
+            },100);
+
+            //以下为部分页面功能设置
+            //关闭公告:
+            notice_close.onclick=function(){
+                hidden.className="hidden_d";
+                notice.className="notice_d";
+                content.style.opacity="0";
+            }
+            
+
+            //打开公告:
+            m2.onclick=function(){
+                notice.className="notice";
+                hidden.className="hidden";
+                function contentOn(){
+                    content.style.opacity="1";
+                    var time=setTimeout(function(){contentOn();},500);
+                    clearTimeout(time);
+                }
+                setTimeout(function(){
+                    contentOn();
+                },500);
+            }
+            
+            //打开菜单
+            tu.onclick=function(){
+                menu.className="menu";
+            }
+            
+            //logo查看
+            logo.onclick=function(){
+                logo.className="logo_big";
+                hidden.className="hidden";
+            }
+            logo.ondblclick=function(){
+                logo.className="logoBox";
+                hidden.className="hidden_d";
+            }
+            
+            //背景点击效果
+            background.onclick=function(){
+                //关闭菜单
+                menu.className="menu_d";
+            }
+            
+            //下拉页面
+            more_btn.onclick=function(){
+                more.className="more";
+                logoBox.style.top="-12%";
+                head.style.top="-12%";
+                opacity.style.top="-12%";
+                tu.style.right="-10%";
+                
+            }
+            more_out.onclick=function(){
+                more.className="more_d";
+                head.style.top="0";
+                logoBox.style.top="0";
+                opacity.style.top="0";
+                tu.style.right="0";
+            }
+            /*}else if(enterPassword!="图图万岁"){
+                background.style.display="none";
+                more_btn.style.display="none";
+                document.write("<p id='failToEnter' style='width:60%;height:10%;color:blue;position:absolute;top:40%;left:25%;font-size:2em;'>暗号错误，刷新以再次输入暗号！</p>");
+            }*/
+            
+        </script>
+    </body>
+</html>
