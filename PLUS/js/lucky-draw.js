@@ -540,7 +540,7 @@ new Vue({
           }
         },
         {
-          name: '被杨帅哥眷顾的幸运儿们',
+          name: '被蓬中眷顾的幸运儿们',
           field: 'names',
           style: {
             colWidth: 888,
