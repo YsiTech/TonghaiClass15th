@@ -6,7 +6,7 @@ var Lock = function () {
   function Lock() {
     _classCallCheck(this, Lock);
 
-    this.pin = '0626';
+    this.pin = '0507';
     this.setupDom();
     this.setupFlickity();
     this.setupAudio();
@@ -42,7 +42,7 @@ var Lock = function () {
         this.verified = true;
         this.dom.lock.classList.add('verified');
         this.dom.status.textContent = '已授权';
-window.location.href="https://cdn1-school.ai-classes.com/fpupload/20220618/53008/3c890af5c48540c0b67a62f8cedae46f/001.mp4";
+window.location.href="桐海学园.mp4";
         this.sounds.success.play();
       } else {
         this.dom.lock.classList.remove('verified');
